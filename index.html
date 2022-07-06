@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <input type="text" v-model.trim="newTodo">
+                    <input type="text" v-model.trim="newTodo" @keyup.enter="addNewToDo(newTodo)">
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-dark" v-for="(todo,index) in todos">
                             <div class="row">
