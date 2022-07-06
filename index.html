@@ -19,23 +19,31 @@
 
     <div id="app">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <input type="text" v-model.trim="newTodo" @keyup.enter="addNewToDo(newTodo)">
+            <div class="row p-5">
+                <h1 class="p-2">Le cose che devi fare:</h1>
+                <div class="col-12 my-3">
+                    <label for="input-inserimento">Inserisci una nuova To Do: </label>
+                    <input class="my-3" type="text" id="input-inserimento" v-model.trim="newTodo" @keyup.enter="addNewToDo(newTodo)">
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-dark" v-for="(todo,index) in todos">
+                        <li v-for="(todo,index) in todos" class="list-group-item list-group-item-dark " :class="{                                    
+                            'list-group-item-success': todo.done==true, 
+                            '': todo.done==false,}">
                             <div class="row">
-                                <div class="col" :class="{                                    
-                                    'text-decoration-line-through': todo.done==true, 
-                                    '': todo.done==false }" @click="lineThrough(index)">
+                                <div class="col pointer " :class="{                                    
+                                    'text-decoration-line-through list-group-item-success': todo.done==true, 
+                                    '': todo.done==false,}" @click="lineThrough(index)">
                                     {{ todo.text }}
                                 </div>
-                                <div class="col">{{ todo.done }}</div>
-                                <div class="col "><a @click="removeToDo(index) "><i class="fa-solid fa-xmark "></i></a></div>
+                                <div class="col" :class="{                                    
+                                    'text-decoration-line-through list-group-item-success': todo.done==true, 
+                                    '': todo.done==false,}">{{ todo.done }}</div>
+                                <div class="col " :class="{                                    
+                                    'text-decoration-line-through list-group-item-success': todo.done==true, 
+                                    '': todo.done==false,}"><a @click="removeToDo(index) "><i class="fa-solid fa-xmark "></i></a></div>
                             </div>
                         </li>
                     </ul>
-                    <input type="button" value="Clicca " @click="addNewToDo(newTodo) ">
+                    <input type="button" class="my-3" value=" Aggiungi " @click="addNewToDo(newTodo) ">
                 </div>
             </div>
         </div>
