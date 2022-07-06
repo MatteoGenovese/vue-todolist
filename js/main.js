@@ -20,12 +20,5 @@ var app = new Vue({
         newTodo: "",
     },
 
-    methods: {
-        addNewToDo: function(...newElement) {
-            const obj = { text: newElement[0], done: false, };
-            this.todos.push(obj);
-            this.newTodo = "";
-        },
 
-    },
 });
