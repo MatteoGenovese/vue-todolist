@@ -21,18 +21,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-dark" v-for="todo in todos">
+                        <li class="list-group-item list-group-item-dark" v-for="(todo,index) in todos">
                             <div class="row">
                                 <div class="col" :class="{ 
                                     'text-decoration-line-through': todo.done==true, 
                                     '': todo.done==false }">{{ todo.text }}</div>
                                 <div class="col">{{ todo.done }}</div>
-                                <div class="col"><a href=""><i class="fa-solid fa-xmark"></i></a></div>
+                                <div class="col"><a @click="removeToDo(index)"><i class="fa-solid fa-xmark"></i></a></div>
                             </div>
                         </li>
                     </ul>
-                    <!-- Doppia funzionalità -->
+
 
 
                 </div>
