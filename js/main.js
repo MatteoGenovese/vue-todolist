@@ -39,5 +39,9 @@ var app = new Vue({
             this.todos.push(obj);
             this.newTodo = "";
         },
+
+        lineThrough: function(index) {
+            this.todos[index].done = !this.todos[index].done;
+        },
     }
 });

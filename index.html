@@ -25,26 +25,24 @@
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-dark" v-for="(todo,index) in todos">
                             <div class="row">
-                                <div class="col" :class="{ 
+                                <div class="col" :class="{                                    
                                     'text-decoration-line-through': todo.done==true, 
-                                    '': todo.done==false }">{{ todo.text }}</div>
+                                    '': todo.done==false }" @click="lineThrough(index)">
+                                    {{ todo.text }}
+                                </div>
                                 <div class="col">{{ todo.done }}</div>
-                                <div class="col"><a @click="removeToDo(index)"><i class="fa-solid fa-xmark"></i></a></div>
+                                <div class="col "><a @click="removeToDo(index) "><i class="fa-solid fa-xmark "></i></a></div>
                             </div>
                         </li>
                     </ul>
-                    <input type="button" value="Clicca" @click="addNewToDo(newTodo)">
-
-
-
-
+                    <input type="button" value="Clicca " @click="addNewToDo(newTodo) ">
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js "></script>
+    <script src="./js/main.js "></script>
 </body>
 
 </html>
