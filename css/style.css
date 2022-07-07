@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
-.list-group-item {}
+body {
+    color: aliceblue;
+    background-color: #000;
+}
 
 .pointer {
     cursor: pointer;
+}
+
+.btn-outline-dark {
+    background-color: #fff;
 }

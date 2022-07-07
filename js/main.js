@@ -35,9 +35,11 @@ var app = new Vue({
         },
 
         addNewToDo: function(...newElement) {
-            const obj = { text: newElement[0], done: false, };
-            this.todos.push(obj);
-            this.newTodo = "";
+            if (newElement[0] != "") {
+                const obj = { text: newElement[0], done: false, };
+                this.todos.push(obj);
+                this.newTodo = "";
+            }
         },
 
         lineThrough: function(index) {
